@@ -1,16 +1,18 @@
 # <img src="https://user-images.githubusercontent.com/307597/154772945-1b7dba5f-21cf-41d0-bb2e-65b6eff4aaaf.png" width="30" height="30"/> SerpApi Plugin for Claude Code
 
-A [Claude Code plugin](https://docs.anthropic.com/en/docs/claude-code/plugins) that gives Claude the ability to search Google, Amazon, Walmart, YouTube, Google Maps, Google Scholar, and [50+ other engines](https://serpapi.com/search-engine-apis) via the [SerpApi](https://serpapi.com) REST API.
+A [Claude Code plugin](https://docs.anthropic.com/en/docs/claude-code/plugins) that gives Claude the ability to search Google, Amazon, Walmart, YouTube, Google Maps, Google Scholar, and [100+ other engines](https://serpapi.com/search-engine-apis) via the [SerpApi](https://serpapi.com) REST API.
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![SerpApi](https://img.shields.io/badge/SerpApi-API-blue.svg)](https://serpapi.com)
-[![Engines](https://img.shields.io/badge/engines-107-orange.svg)](engines/)
+[![Engines](https://img.shields.io/badge/engines-107-blue.svg)](engines/)
+[![CI](https://github.com/serpapi/serpapi-claude-plugin/actions/workflows/update-engines.yml/badge.svg)](https://github.com/serpapi/serpapi-claude-plugin/actions/workflows/update-engines.yml)
 
 ## Quick Start
 
 ### 1. Get an API key
 
-Sign up at [serpapi.com](https://serpapi.com/users/sign_up?plan=free) (free tier: 250 searches/month) and set the key:
+Sign up at [serpapi.com](https://serpapi.com/users/sign_up?plan=free) and set the key:
+
+> **Free tier** - 250 searches/month, no credit card required.
 
 ```bash
 export SERPAPI_API_KEY="your_key_here"
@@ -18,14 +20,14 @@ export SERPAPI_API_KEY="your_key_here"
 
 ### 2. Install the plugin
 
-**From the marketplace:**
+**From the marketplace** (two steps - register the catalog, then install):
 
-```
+```bash
 /plugin marketplace add serpapi/serpapi-claude-plugin
 /plugin install serpapi@serpapi-plugins
 ```
 
-**Or test locally:**
+**From source:**
 
 ```bash
 claude --plugin-dir /path/to/serpapi-claude-plugin
@@ -33,21 +35,15 @@ claude --plugin-dir /path/to/serpapi-claude-plugin
 
 ### 3. Use it
 
-Claude will automatically use SerpApi when you ask it to search for something:
+Claude will automatically use SerpApi when you ask it to search for something. Just ask in natural language:
 
-```
-Search Google for the best Python web frameworks
-```
+> *Search Google for the best Python web frameworks*
+>
+> *Compare prices for AirPods Pro on Amazon, Walmart, and eBay*
+>
+> *Find academic papers about transformer architectures published after 2020*
 
-```
-Compare prices for AirPods Pro on Amazon, Walmart, and eBay
-```
-
-```
-Find academic papers about transformer architectures published after 2020
-```
-
-Or invoke explicitly:
+Or invoke the skill explicitly:
 
 ```
 /serpapi:search coffee shops near Times Square
@@ -55,10 +51,11 @@ Or invoke explicitly:
 
 ## Features
 
-- **Single skill, all engines** -- `/serpapi:search` covers all 50+ SerpApi engines. Claude picks the right one based on your intent.
-- **Always up to date** -- Engine parameter schemas are auto-generated and kept fresh by weekly CI.
-- **Auto-invocation** -- Claude detects search-related requests and loads the skill automatically. No need to remember slash commands.
-- **Cost-aware** -- Defaults to `google_light` (faster, cheaper) for simple web searches. Confirms before making API calls.
+- **Single skill, all engines** - `/serpapi:search` covers all 100+ SerpApi engines. Claude picks the right one based on your intent.
+- **Always up to date** - Engine parameter schemas are auto-generated and kept fresh by weekly CI.
+- **Auto-invocation** - Claude detects search-related requests and loads the skill automatically. No need to remember slash commands.
+- **Cost-aware** - Defaults to `google_light` (faster, cheaper) for simple web searches. Confirms before making API calls.
+- **Schema-driven** - The plugin ships a complete engine selection table and JSON schemas for every engine's parameters, so Claude can construct the right API call without guessing.
 
 ## Supported Engines
 
@@ -77,12 +74,6 @@ Or invoke explicitly:
 | Apps | Google Play, Apple App Store |
 
 See the full list in [`engines/`](engines/).
-
-## How It Works
-
-The plugin provides Claude with the [SerpApi](https://serpapi.com) endpoint pattern and a complete engine selection table. When you ask Claude to search for something, it selects the right engine, constructs the API call with the appropriate parameters, and summarizes the results.
-
-For engine-specific parameters (filters, sorting, pagination), the plugin includes JSON schemas for every supported engine in the `engines/` directory.
 
 ## Troubleshooting
 
@@ -107,30 +98,6 @@ To validate the plugin structure:
 bash test.sh
 ```
 
-### Project Structure
-
-```
-serpapi-claude-plugin/
-├── .claude-plugin/
-│   ├── plugin.json             # Plugin manifest
-│   └── marketplace.json        # Marketplace catalog
-├── .github/workflows/
-│   └── update-engines.yml      # Weekly engine schema refresh
-├── engines/                    # Engine JSON schemas (107 files)
-│   ├── google.json
-│   ├── amazon.json
-│   ├── google_maps.json
-│   └── ...
-├── skills/
-│   └── search/
-│       ├── SKILL.md            # Core skill
-│       └── examples.md         # Usage examples
-├── build-engines.py            # Engine schema generator
-├── requirements.txt            # Python deps for build script
-├── test.sh                     # Validation script
-└── README.md
-```
-
 ## Contributing
 
 1. Fork the repository
@@ -143,10 +110,10 @@ serpapi-claude-plugin/
 
 ## Related
 
-- [SerpApi MCP Server](https://github.com/serpapi/serpapi-mcp) -- MCP server integration for Claude Desktop, VS Code, and Cursor
-- [SerpApi Docs](https://serpapi.com/search-api) -- Full API reference
-- [SerpApi Playground](https://serpapi.com/playground) -- Interactive API explorer
+- [SerpApi MCP Server](https://github.com/serpapi/serpapi-mcp) - MCP server integration for Claude Desktop, VS Code, and Cursor
+- [SerpApi Docs](https://serpapi.com/search-api) - Full API reference
+- [SerpApi Playground](https://serpapi.com/playground) - Interactive API explorer
 
 ## License
 
-MIT License -- see [LICENSE](LICENSE) file for details.
+MIT License - see [LICENSE](LICENSE) file for details.
