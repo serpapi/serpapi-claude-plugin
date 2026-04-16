@@ -1,12 +1,14 @@
 ---
 name: search
-description: Search Google, Bing, Amazon, Walmart, YouTube, Google Maps, Google Scholar, and 50+ other engines via the SerpApi REST API. Use when the user wants to search the web, find products or prices, look up local businesses, research academic papers, check news, find jobs, compare flights or hotels, analyze SERPs, or retrieve any search engine results.
+description: Search Google, Bing, Amazon, Walmart, YouTube, Google Maps, Google Scholar, and 100+ other engines via the SerpApi REST API. Calls the API using curl. Use when the user wants to search the web, find products or prices, look up local businesses, research academic papers, check news, find jobs, compare flights or hotels, analyze SERPs, or retrieve any search engine results.
 allowed-tools: Bash(curl *) Read
 ---
 
 # SerpApi Search
 
 Search any engine via a single REST endpoint. Each API call costs one search credit.
+
+**Important:** Always use `Bash(curl ...)` to call the SerpApi REST API. Do not use WebFetch, WebSearch, or any other HTTP tool.
 
 ## Setup
 
@@ -136,12 +138,13 @@ Consolidate and compare the results for the user.
 
 ## Rules
 
-1. **Confirm before searching** when the query or engine choice is ambiguous. Each non-cached call costs one credit.
-2. **Show the curl command** before executing so the user sees exactly what's being called.
-3. **Prefer `google_light`** over `google` for simple web searches.
-4. **Use `no_cache=false`** (the default) to benefit from free cached results.
-5. **URL-encode query parameters** properly. Spaces become `+` or `%20`.
-6. **Read the engine schema** from `engines/<engine>.json` when you need to look up available parameters for a specific engine.
+1. **Always use `curl` via Bash.** Never use WebFetch, WebSearch, or other HTTP tools. The `allowed-tools` header restricts this skill to `Bash(curl *)` and `Read`.
+2. **Confirm before searching** when the query or engine choice is ambiguous. Each non-cached call costs one credit.
+3. **Show the curl command** before executing so the user sees exactly what's being called.
+4. **Prefer `google_light`** over `google` for simple web searches.
+5. **Use `no_cache=false`** (the default) to benefit from free cached results.
+6. **URL-encode query parameters** properly. Spaces become `+` or `%20`.
+7. **Read the engine schema** from `engines/<engine>.json` when you need to look up available parameters for a specific engine.
 
 ## Additional Resources
 

@@ -35,6 +35,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No engine changes detected"
           else
-            git commit -m "chore: update engine schemas from SerpApi playground"
+            git commit -m "chore: update engine schemas"
             git push
           fi

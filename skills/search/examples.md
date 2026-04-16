@@ -69,7 +69,7 @@ curl -s "https://serpapi.com/search.json?engine=google_trends&q=react,vue,svelte
 ## Google Flights
 
 ```bash
-curl -s "https://serpapi.com/search.json?engine=google_flights&departure_id=SFO&arrival_id=JFK&outbound_date=2025-03-01&return_date=2025-03-08&currency=USD&hl=en&api_key=$SERPAPI_API_KEY"
+curl -s "https://serpapi.com/search.json?engine=google_flights&departure_id=SFO&arrival_id=JFK&outbound_date=2026-06-01&return_date=2026-06-08&currency=USD&hl=en&api_key=$SERPAPI_API_KEY"
 ```
 
 ## Google Jobs
