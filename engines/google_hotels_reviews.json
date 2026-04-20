@@ -3,7 +3,7 @@
   "params": {
     "property_token": {
       "required": true,
-      "description": "Parameter defines the sepcific property. You can find property\\_token from Google Hotels Properties API.",
+      "description": "Parameter defines the specific property. You can find property\\_token from Google Hotels Properties API.",
       "group": "search_query"
     },
     "hl": {

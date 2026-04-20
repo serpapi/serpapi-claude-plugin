@@ -522,11 +522,11 @@
       "group": "advanced_google_flights_parameters"
     },
     "outbound_date": {
-      "description": "Parameter defines the outbound date. The format is YYYY-MM-DD. e.g. `2026-01-15`",
+      "description": "Parameter defines the outbound date. The format is YYYY-MM-DD. e.g. `2026-04-21`",
       "group": "advanced_google_flights_parameters"
     },
     "return_date": {
-      "description": "Parameter defines the return date. The format is YYYY-MM-DD. e.g. `2026-01-21` Parameter is required if type parameter is set to: `1` (Round trip)",
+      "description": "Parameter defines the return date. The format is YYYY-MM-DD. e.g. `2026-04-27` Parameter is required if type parameter is set to: `1` (Round trip)",
       "group": "advanced_google_flights_parameters"
     },
     "travel_class": {
@@ -553,12 +553,12 @@
       "group": "advanced_google_flights_parameters"
     },
     "multi_city_json": {
-      "description": "Parameter defines the flight information for multi-city flights. It's a JSON string containing multiple flight information objects. Each object should contain the following fields: `departure_id` - The departure airport code or location kgmid. The format is the same as the main departure\\_id parameter. `arrival_id` - The arrival airport code or location kgmid. The format is the same as the main arrival\\_id parameter. `date` - Flight date. The format is the same as the outbound\\_date parameter. `times` - Time range for the flight. The format is the same as the outbound\\_times parameter. This parameter is optional. Example: `[{\"departure_id\":\"CDG\",\"arrival_id\":\"NRT\",\"date\":\"2026-01-21\"},{\"departure_id\":\"NRT\",\"arrival_id\":\"LAX,SEA\",\"date\":\"2026-01-28\"},{\"departure_id\":\"LAX,SEA\",\"arrival_id\":\"AUS\",\"date\":\"2026-02-04\",\"times\":\"8,18,9,23\"}]` The example is a multi-city flight from `CDG` to `NRT` on `2026-01-21`, then from `NRT` to `LAX` or `SEA` on `2026-01-28`, and finally from `LAX` or `SEA` to `AUS` on `2026-02-04`. The last flight has a departure time range from 8:00 AM to 7:00 PM and an arrival time range from 9:00 AM to 12:00 AM (Midnight).",
+      "description": "Parameter defines the flight information for multi-city flights. It's a JSON string containing multiple flight information objects. Each object should contain the following fields: `departure_id` - The departure airport code or location kgmid. The format is the same as the main departure\\_id parameter. `arrival_id` - The arrival airport code or location kgmid. The format is the same as the main arrival\\_id parameter. `date` - Flight date. The format is the same as the outbound\\_date parameter. `times` - Time range for the flight. The format is the same as the outbound\\_times parameter. This parameter is optional. Example: `[{\"departure_id\":\"CDG\",\"arrival_id\":\"NRT\",\"date\":\"2026-04-27\"},{\"departure_id\":\"NRT\",\"arrival_id\":\"LAX,SEA\",\"date\":\"2026-05-04\"},{\"departure_id\":\"LAX,SEA\",\"arrival_id\":\"AUS\",\"date\":\"2026-05-11\",\"times\":\"8,18,9,23\"}]` The example is a multi-city flight from `CDG` to `NRT` on `2026-04-27`, then from `NRT` to `LAX` or `SEA` on `2026-05-04`, and finally from `LAX` or `SEA` to `AUS` on `2026-05-11`. The last flight has a departure time range from 8:00 AM to 7:00 PM and an arrival time range from 9:00 AM to 12:00 AM (Midnight).",
       "group": "advanced_google_flights_parameters"
     },
     "show_hidden": {
       "type": "checkbox",
-      "description": "Set to `true` to include the hidden flight results. Default to `false`.",
+      "description": "Set to `true` to include the hidden flight results. This is equivalent to clicking 'View more flights' on Google Flights. Default to `false`.",
       "group": "advanced_google_flights_parameters"
     },
     "exclude_basic": {
@@ -692,7 +692,7 @@
     },
     "max_duration": {
       "type": "number",
-      "description": "Parameter defines the maximum flight duration, in minutes. For example, specify `1500` for 25 hours.",
+      "description": "Parameter defines the maximum flight duration, in minutes. For example, specify `1500` for 25 hours. If your search returns no results, try increasing your max\\_duration by up to `200` minutes to account for route-specific scheduling variances.",
       "group": "advanced_filters"
     },
     "departure_token": {

@@ -430,9 +430,18 @@
       "description": "Parameter defines the language to use for the Google search. It's a two-letter language code. (e.g., `en` for English, `es` for Spanish, or `fr` for French). Head to the Google languages page for a full list of supported Google languages.",
       "group": "localization"
     },
+    "continuable": {
+      "type": "checkbox",
+      "description": "Set parameter to `true` to make the conversation continuable. It defaults to `false`. When set to `true`, SerpApi will return a subsequent\\_request\\_token in the response which can be used to continue the conversation with a follow-up question that includes the prior exchange as context (multi-turn).",
+      "group": "subsequent_request"
+    },
     "subsequent_request_token": {
       "description": "Parameter defines the token used to continue a Google AI Mode conversation. Pass this token to send a follow-up question that includes the prior exchange as context (multi-turn). The token is returned by SerpApi from your previous request using our Google AI Mode API. When using this token, include a new q for your follow-up prompt. For consistent behavior, reuse the same localization settings (gl, hl, and location) you used to obtain the token.",
       "group": "subsequent_request"
+    },
+    "image_url": {
+      "description": "Parameter defines the URL of an image to include in the prompt. The image will be used as additional context for the AI to generate a response.",
+      "group": "advanced_parameters"
     }
   },
   "common_params": {
