@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "serpapi",
-      "source": ".",
+      "source": "./",
       "description": "Search Google, Amazon, Walmart, YouTube, and 50+ engines via SerpApi",
       "homepage": "https://serpapi.com",
       "repository": "https://github.com/serpapi/serpapi-claude-plugin",
