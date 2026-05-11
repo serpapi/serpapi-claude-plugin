@@ -39,7 +39,7 @@
     },
     "open_at": {
       "type": "number",
-      "description": "Parameter defines the time at which result locations should be open at. The value must be a Unix timestamp that is in the future, and no more than 24 hours from the current time. (e.g. `1777910991`).",
+      "description": "Parameter defines the time at which result locations should be open at. The value must be a Unix timestamp that is in the future, and no more than 24 hours from the current time. (e.g. `1778433591`).",
       "group": "refinement"
     },
     "locale": {

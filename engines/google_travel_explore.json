@@ -523,11 +523,11 @@
       "group": "advanced_google_travel_explore_parameters"
     },
     "outbound_date": {
-      "description": "Parameter defines the outbound date. The format is YYYY-MM-DD. e.g. `2026-05-05`",
+      "description": "Parameter defines the outbound date. The format is YYYY-MM-DD. e.g. `2026-05-11`",
       "group": "advanced_google_travel_explore_parameters"
     },
     "return_date": {
-      "description": "Parameter defines the return date. The format is YYYY-MM-DD. e.g. `2026-05-11` Parameter is required if type parameter is set to: `1` (Round trip)",
+      "description": "Parameter defines the return date. The format is YYYY-MM-DD. e.g. `2026-05-17` Parameter is required if type parameter is set to: `1` (Round trip)",
       "group": "advanced_google_travel_explore_parameters"
     },
     "month": {
