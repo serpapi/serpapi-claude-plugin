@@ -1,17 +1,19 @@
 {
   "name": "serpapi-plugins",
+  "description": "Official SerpApi plugins for Claude Code",
   "owner": {
     "name": "SerpApi",
     "email": "support@serpapi.com"
-  },
-  "metadata": {
-    "description": "Official SerpApi plugins for Claude Code"
   },
   "plugins": [
     {
       "name": "serpapi",
       "source": "./",
-      "description": "Search Google, Amazon, Walmart, YouTube, and 50+ engines via SerpApi",
+      "description": "Search Google, Amazon, Walmart, YouTube, and 100+ engines via SerpApi",
+      "version": "1.0.0",
+      "author": {
+        "name": "SerpApi"
+      },
       "homepage": "https://serpapi.com",
       "repository": "https://github.com/serpapi/serpapi-claude-plugin",
       "license": "MIT",
