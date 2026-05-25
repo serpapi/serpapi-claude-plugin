@@ -971,6 +971,25 @@
       "description": "Parameter defines the buying format you can apply to the results. Available options **(case-sensitive)**: `Auction` - Auction `BIN` - Buy It Now `BO` - Accepts Offers",
       "group": "advanced_filters"
     },
+    "_sasl": {
+      "description": "Parameter defines the seller username(s) to filter results by. You can specify multiple sellers separated by commas (e.g. `iRobot,samsung`). Use with `_saslop` to control whether to include or exclude items from the specified seller(s).",
+      "group": "advanced_filters"
+    },
+    "_saslop": {
+      "type": "select",
+      "options": [
+        [
+          "1",
+          "Only show items from sellers (default)"
+        ],
+        [
+          "2",
+          "Don't show items from sellers"
+        ]
+      ],
+      "description": "Parameter defines whether to include or exclude items from the seller(s) specified in `_sasl`. Available options: `1` - Only show items from sellers (default) `2` - Don't show items from sellers",
+      "group": "advanced_filters"
+    },
     "_udlo": {
       "type": "number",
       "description": "Parameter defines the lowest price of items that should be included in the results (e.g. `10` will only return items that have higher price than `10`).",
