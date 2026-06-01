@@ -3,7 +3,7 @@
   "params": {
     "q": {
       "required": true,
-      "description": "Parameter defines the query you want to search. You can use anything that you would use in a regular Google Shopping search.",
+      "description": "Parameter defines the query you want to search. You can use anything that you would use in a regular Google Shopping search. This parameter is optional if using shoprs parameter.",
       "group": "search_query"
     },
     "location": {

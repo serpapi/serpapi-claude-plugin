@@ -363,7 +363,7 @@
     },
     "dc": {
       "type": "checkbox",
-      "description": "Activate spelling fix. `true` (default) includes spelling fix, `false` searches without spelling fix.",
+      "description": "Parameter defines the exclusion of results from an auto-corrected query when the original query is spelled wrong. It can be set to `true` to exclude these results, or `false` to include them (default).",
       "group": "advanced_filters"
     },
     "page": {
