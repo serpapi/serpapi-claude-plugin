@@ -24,7 +24,7 @@
         "top_rated",
         "best_match"
       ],
-      "description": "Parameter defines results sorted by different options in Home Depot US. It can be set to:",
+      "description": "Parameter defines results sorted by different options in Home Depot US. It can be set to: `top_sellers`: Top Sellers, `price_low_to_high`: Price Low to High, `price_high_to_low`: Price High to Low, `top_rated`: Top Rated, `best_match`: Best Match",
       "group": "advanced_home_depot_parameters"
     },
     "hd_filter_tokens": {
@@ -51,7 +51,7 @@
         "reviewAvgRating",
         "relevance"
       ],
-      "description": "Parameter defines results sorted by different options in Home Depot Canada. It can be set to:",
+      "description": "Parameter defines results sorted by different options in Home Depot Canada. It can be set to: `price-asc`: Price Low to High, `price-desc`: Price High to Low, `reviewAvgRating`: Top Rated, `relevance`: Recommended (Default)",
       "group": "advanced_home_depot_parameters"
     },
     "filter": {

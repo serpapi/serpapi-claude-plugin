@@ -1,9 +1,8 @@
 {
-  "engine": "google_travel_explore",
+  "engine": "google_flights_deals",
   "params": {
     "departure_id": {
-      "required": true,
-      "description": "Parameter defines the departure airport code or city location kgmid. An airport code is an uppercase 3-letter code. You can search for it on Google Flights or IATA. For example, `CDG` is Paris Charles de Gaulle Airport and `AUS` is Austin-Bergstrom International Airport. A location kgmid is a string that starts with `/m/` or `/g/`. You can search for a location on Wikidata and use its \"Freebase ID\" as the location kgmid. For example, `/m/0vzm` is the location kgmid for Austin, TX. You can specify multiple departure airports by separating them with a comma. For example, `CDG,ORY,/m/04jpl`.",
+      "description": "Parameter defines the departure airport code or location kgmid. An airport code is an uppercase 3-letter code. You can search for it using our Google Flights Autocomplete API or IATA. For example, `CDG` is Paris Charles de Gaulle Airport and `AUS` is Austin-Bergstrom International Airport. A location kgmid is a string that starts with `/m/` or `/g/`. You can search for a location on Wikidata and use its \"Freebase ID\" as the location kgmid. For example, `/m/0vzm` is the location kgmid for Austin, TX. You can specify multiple departure airports by separating them with a comma. For example, `CDG,ORY,/m/04jpl`.",
       "group": "search_query"
     },
     "gl": {
@@ -254,7 +253,7 @@
         "zm",
         "zw"
       ],
-      "description": "Parameter defines the country to use for the Google Travel Explore search. It's a two-letter country code. (e.g., `us` for the United States, `uk` for United Kingdom, or `fr` for France) Head to the Google countries page for a full list of supported Google countries.",
+      "description": "Parameter defines the country to use for the Google Flights Deals search. It's a two-letter country code. (e.g., `us` for the United States, `uk` for United Kingdom, or `fr` for France) Head to the Google countries page for a full list of supported Google countries.",
       "group": "localization"
     },
     "hl": {
@@ -418,7 +417,7 @@
         "yo",
         "zu"
       ],
-      "description": "Parameter defines the language to use for the Google Travel Explore search. It's a two-letter language code. (e.g., `en` for English, `es` for Spanish, or `fr` for French). Head to the Google languages page for a full list of supported Google languages.",
+      "description": "Parameter defines the language to use for the Google Flights Deals search. It's a two-letter language code. (e.g., `en` for English, `es` for Spanish, or `fr` for French). Head to the Google languages page for a full list of supported Google languages.",
       "group": "localization"
     },
     "currency": {
@@ -499,14 +498,6 @@
       "description": "Parameter defines the currency of the returned prices. Default to `USD`. Head to the Google Travel Currencies page for a full list of supported currency codes.",
       "group": "localization"
     },
-    "arrival_area_id": {
-      "description": "Parameter defines the arrival region or country as a location kgmid. A location kgmid is a string that starts with `/m/` or `/g/`. You can search for a region or country on Wikidata and use its \"Freebase ID\" as the location kgmid. For example, `/m/02j9z` is the location kgmid for Europe, and `/m/0f8l9c` is the location kgmid for France. This parameter is used when exploring flights to broader areas (regions or countries) rather than specific cities or airports.",
-      "group": "advanced_google_travel_explore_parameters"
-    },
-    "arrival_id": {
-      "description": "Parameter defines the arrival airport code or city location kgmid. An airport code is an uppercase 3-letter code. You can search for it on Google Flights or IATA. For example, `CDG` is Paris Charles de Gaulle Airport and `AUS` is Austin-Bergstrom International Airport. A location kgmid is a string that starts with `/m/` or `/g/`. You can search for a location on Wikidata and use its \"Freebase ID\" as the location kgmid. For example, `/m/0vzm` is the location kgmid for Austin, TX.",
-      "group": "advanced_google_travel_explore_parameters"
-    },
     "type": {
       "type": "select",
       "options": [
@@ -519,39 +510,8 @@
           "One way - 2"
         ]
       ],
-      "description": "Parameter defines the type of the flights. Available options: `1` - Round trip (default) `2` - One way When this parameter is set to `3`, use multi\\_city\\_json to set the flight information.",
-      "group": "advanced_google_travel_explore_parameters"
-    },
-    "outbound_date": {
-      "description": "Parameter defines the outbound date. The format is YYYY-MM-DD. e.g. `2026-06-09`",
-      "group": "advanced_google_travel_explore_parameters"
-    },
-    "return_date": {
-      "description": "Parameter defines the return date. The format is YYYY-MM-DD. e.g. `2026-06-15` Parameter is required if type parameter is set to: `1` (Round trip)",
-      "group": "advanced_google_travel_explore_parameters"
-    },
-    "month": {
-      "description": "Parameter defines the month of the trip with flexible travel dates. The value must be a number from `1` to `12`, where `1` = January, `2` = February, …, `12` = December. `0` (default) means all months within the next 6 months are considered. Only the next 6 months from the current date are available for selection.",
-      "group": "advanced_google_travel_explore_parameters"
-    },
-    "travel_duration": {
-      "type": "select",
-      "options": [
-        [
-          1,
-          "Weekend - 1"
-        ],
-        [
-          2,
-          "1 week (default) - 2"
-        ],
-        [
-          3,
-          "2 weeks - 3"
-        ]
-      ],
-      "description": "Parameter defines the duration of the trip with flexible travel dates. Available options: `1` - Weekend `2` - 1 week (default) `3` - 2 weeks",
-      "group": "advanced_google_travel_explore_parameters"
+      "description": "Parameter defines the type of the flights. Available options: `1` - Round trip (default) `2` - One way",
+      "group": "advanced_google_flights_parameters"
     },
     "travel_class": {
       "type": "select",
@@ -574,7 +534,38 @@
         ]
       ],
       "description": "Parameter defines the travel class. Available options: `1` - Economy (default) `2` - Premium economy `3` - Business `4` - First",
-      "group": "advanced_google_travel_explore_parameters"
+      "group": "advanced_google_flights_parameters"
+    },
+    "outbound_date": {
+      "description": "Parameter defines when you want to depart. Use a single YYYY-MM-DD date for an exact departure date, or two comma-separated dates for a flexible departure window. Examples: `2026-06-09` — depart on this exact date `2026-06-09,2026-07-08` — depart anytime within this window With a **single date**: return\\_date (single date) is required for round trip flights. With a **date range**: optionally combine with one of return\\_date (as a range), travel\\_duration, or trip\\_length to control the trip length. If none are provided, deals of any duration are returned. If omitted entirely, deals for any date are returned.",
+      "group": "date_parameters"
+    },
+    "return_date": {
+      "description": "Parameter defines when you want to return. Use a single YYYY-MM-DD date for an exact return date, or two comma-separated dates for a flexible return window. Examples: `2026-06-15` — return on this exact date (use with a single outbound\\_date) `2026-06-15,2026-07-15` — return anytime within this window (use with a range outbound\\_date) Not available for one-way flights (type = `2`). A single return\\_date must be paired with a single outbound\\_date. A range return\\_date must be paired with a range outbound\\_date. Cannot be combined with travel\\_duration or trip\\_length (use one or the other to define trip length).",
+      "group": "date_parameters"
+    },
+    "travel_duration": {
+      "type": "select",
+      "options": [
+        [
+          1,
+          "1 week (default) - 1"
+        ],
+        [
+          2,
+          "Weekend - 2"
+        ],
+        [
+          3,
+          "2 weeks - 3"
+        ]
+      ],
+      "description": "Parameter defines a preset trip duration when searching with flexible dates. Available options: `1` - 1 week (default) `2` - Weekend `3` - 2 weeks Can be used alone (deals of this duration, any departure date) or with outbound\\_date as a date range (e.g., `2026-06-09,2026-07-08`) to limit the departure window. Cannot be combined with return\\_date or trip\\_length. Not available for one-way flights (type = `2`).",
+      "group": "date_parameters"
+    },
+    "trip_length": {
+      "description": "Parameter defines a custom trip length in days when searching with flexible dates. Provide a single number for an exact duration, or two comma-separated numbers for a min/max range. Examples: `7` — exactly 7 days `5,10` — between 5 and 10 days Can be used alone (deals of this length, any departure date) or with outbound\\_date as a date range (e.g., `2026-06-09,2026-07-08`) to limit the departure window. Cannot be combined with return\\_date or travel\\_duration. Not available for one-way flights (type = `2`). Each value must be at least `1`. When two values are provided, the first (min) must be ≤ the second (max).",
+      "group": "date_parameters"
     },
     "adults": {
       "type": "number",
@@ -619,48 +610,12 @@
       "description": "Parameter defines the number of stops during the flight. Available options: `0` - Any number of stops (default) `1` - Nonstop only `2` - 1 stop or fewer `3` - 2 stops or fewer",
       "group": "advanced_filters"
     },
-    "travel_mode": {
-      "type": "select",
-      "options": [
-        [
-          "0",
-          "All (default) - 0"
-        ],
-        [
-          "1",
-          "Flight only - 1"
-        ]
-      ],
-      "description": "Parameter defines the travel mode. Available options: `0` - All (default) `1` - Flight only travel\\_mode and interest parameters can't be used together.",
-      "group": "advanced_filters"
-    },
-    "interest": {
-      "type": "select",
-      "options": [
-        [
-          "0",
-          "Popular (default)"
-        ],
-        "/g/11bc58l13w",
-        "/m/0b3yr",
-        "/m/09cmq",
-        "/m/03g3w",
-        "/m/071k0"
-      ],
-      "description": "Parameter defines the interest of the destination. Available options: `0` - Popular (default) `/g/11bc58l13w` - Outdoors `/m/0b3yr` - Beaches `/m/09cmq` - Museum `/m/03g3w` - History `/m/071k0` - Skiing travel\\_mode and interest parameters can't be used together.",
+    "exclude_airlines": {
+      "description": "Parameter defines the airline codes to be excluded. Split multiple airlines with comma. It can't be used together with `include_airlines`. Each airline code should be a 2-character IATA code consisting of either two uppercase letters or one uppercase letter and one digit. You can search for airline codes on IATA. For example, `UA` is United Airlines. Additionally, alliances can be also included here: `STAR_ALLIANCE` - Star Alliance `SKYTEAM` - SkyTeam `ONEWORLD` - Oneworld exclude\\_airlines and include\\_airlines parameters can't be used together.",
       "group": "advanced_filters"
     },
     "include_airlines": {
-      "description": "Parameter defines the airline codes to be included. Split multiple airlines with a comma. Each airline code should be a 2-character IATA code consisting of either two uppercase letters or one uppercase letter and one digit. You can search for airline codes on IATA. For example, `UA` is United Airlines. Additionally, alliances can be also included here: `STAR_ALLIANCE` - Star Alliance `SKYTEAM` - SkyTeam `ONEWORLD` - Oneworld exclude\\_airlines and include\\_airlines parameters can't be used together.",
-      "group": "advanced_filters"
-    },
-    "exclude_airlines": {
-      "description": "Parameter defines the airline codes to be excluded. Split multiple airlines with a comma. Each airline code should be a 2-character IATA code consisting of either two uppercase letters or one uppercase letter and one digit. You can search for airline codes on IATA. For example, `UA` is United Airlines. Additionally, alliances can be also excluded here: `STAR_ALLIANCE` - Star Alliance `SKYTEAM` - SkyTeam `ONEWORLD` - Oneworld exclude\\_airlines and include\\_airlines parameters can't be used together.",
-      "group": "advanced_filters"
-    },
-    "bags": {
-      "type": "number",
-      "description": "Parameter defines the number of carry-on bags. Default to `0`. Parameter should not exceed the total number of passengers with carry-on bag allowance (adults, children and infants\\_in\\_seat).",
+      "description": "Parameter defines the airline codes to be included. Split multiple airlines with comma. It can't be used together with `exclude_airlines`. Each airline code should be a 2-character IATA code consisting of either two uppercase letters or one uppercase letter and one digit. You can search for airline codes on IATA. For example, `UA` is United Airlines. Additionally, alliances can be also included here: `STAR_ALLIANCE` - Star Alliance `SKYTEAM` - SkyTeam `ONEWORLD` - Oneworld exclude\\_airlines and include\\_airlines parameters can't be used together.",
       "group": "advanced_filters"
     },
     "max_price": {
@@ -677,12 +632,12 @@
   "common_params": {
     "engine": {
       "required": true,
-      "description": "Set parameter to `google_travel_explore` to use the Google Travel Explore API engine.",
+      "description": "Set parameter to `google_flights` to use the Google Flights API engine.",
       "group": "serpapi_parameters"
     },
     "no_cache": {
       "type": "checkbox",
-      "description": "Parameter will force SerpApi to fetch the Google Travel Explore results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "description": "Parameter will force SerpApi to fetch the Google Flights results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
       "group": "serpapi_parameters"
     },
     "async": {

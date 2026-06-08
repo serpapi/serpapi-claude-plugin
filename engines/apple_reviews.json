@@ -184,7 +184,7 @@
         "mostfavorable",
         "mostcritical"
       ],
-      "description": "Parameter is used for sorting reviews for the iOS App Store (iPhone and iPad). It can be set to:",
+      "description": "Parameter is used for sorting reviews for the iOS App Store (iPhone and iPad). It can be set to: `mostrecent`: Most recent (default), `mosthelpful`: Most helpful, `mostfavorable`: Most favorable, `mostcritical`: Most critical This parameter has no effect on the macOS App Store. Reviews from the macOS App Store will always be sorted from most recent to least recent.",
       "group": "advanced_apple_reviews_parameters"
     }
   },

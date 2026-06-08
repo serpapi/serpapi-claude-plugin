@@ -91,7 +91,7 @@
       "group": "advanced_duckduckgo_news_filters"
     },
     "df": {
-      "description": "Parameter defines results filtered by date. It can be set to:",
+      "description": "Parameter defines results filtered by date. It can be set to: `d`: Past day, `w`: Past week, `m`: Past month.",
       "group": "advanced_duckduckgo_news_filters"
     },
     "start": {

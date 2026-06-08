@@ -501,12 +501,12 @@
     },
     "check_in_date": {
       "required": true,
-      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD**. e.g. `2026-06-01`",
+      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD**. e.g. `2026-06-09`",
       "group": "advanced_parameters"
     },
     "check_out_date": {
       "required": true,
-      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD**. e.g. `2026-06-02`",
+      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD**. e.g. `2026-06-10`",
       "group": "advanced_parameters"
     },
     "adults": {
@@ -520,7 +520,7 @@
       "group": "advanced_parameters"
     },
     "children_ages": {
-      "description": "Parameter defines the ages of children. The age range is from `1` to `17`, with children who haven't reached 1 year old being considered as `1`. Example for single child only: `5` Example for multiple children (separated by comma `,`): `5,8,10`",
+      "description": "Parameter defines the ages of children. The age range is from `1` to `17`, with children who haven't reached 1 year old being considered as `1`. Example for single child only: `5` Example for multiple children (separated by comma `,`): `5,8,10` The number of children's ages specified must match the children.",
       "group": "advanced_parameters"
     },
     "sort_by": {
@@ -580,11 +580,11 @@
       "group": "advanced_filters"
     },
     "brands": {
-      "description": "Parameter defines the brands where you want your search to be concentrated. ID values are accessible inside `brands` array, located in our JSON output (e.g. `brands[0].id`). Example for single brand only: `33` Example for multiple brands (separated by comma `,`): `33,67,101`",
+      "description": "Parameter defines the brands where you want your search to be concentrated. ID values are accessible inside `brands` array, located in our JSON output (e.g. `brands[0].id`). Example for single brand only: `33` Example for multiple brands (separated by comma `,`): `33,67,101` This parameter isn't available for Vacation Rentals.",
       "group": "hotels_filters"
     },
     "hotel_class": {
-      "description": "Parameter defines to include only certain hotel class in the results. Available options: `2` - 2-star `3` - 3-star `4` - 4-star `5` - 5-star Example for single hotel class only: `2` Example for multiple hotel class (separated by comma `,`): `2,3,4`",
+      "description": "Parameter defines to include only certain hotel class in the results. Available options: `2` - 2-star `3` - 3-star `4` - 4-star `5` - 5-star Example for single hotel class only: `2` Example for multiple hotel class (separated by comma `,`): `2,3,4` This parameter isn't available for Vacation Rentals.",
       "group": "hotels_filters"
     },
     "free_cancellation": {

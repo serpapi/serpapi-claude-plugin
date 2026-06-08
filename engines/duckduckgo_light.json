@@ -78,7 +78,7 @@
       "group": "localization"
     },
     "df": {
-      "description": "Parameter defines results filtered by date. It can be set to:",
+      "description": "Parameter defines results filtered by date. It can be set to: `d`: Past day, `w`: Past week, `m`: Past month, `y`: Past year, or you can pass a custom date following the next format: `from_date` + `..` + `to_date` (e.g. `2021-06-15..2024-06-16`).",
       "group": "advanced_duckduckgo_filters"
     },
     "next_page_token": {

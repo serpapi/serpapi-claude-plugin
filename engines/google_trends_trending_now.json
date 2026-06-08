@@ -2371,7 +2371,7 @@
       "group": "old_version_parameters"
     },
     "next_page_token": {
-      "description": "Parameter defines the next page token, which is used for retrieving the next page of results. When querying the API, the first response will provide access to all available pages. However, it's important to note that Google realtime search trends do not follow conventional pagination practices. Not to worry, though, as we have abstracted this complexity for you. Here's the caveat: only the first page will contain pagination information. Subsequent requests for the next page will not display pagination details.",
+      "description": "Parameter defines the next page token, which is used for retrieving the next page of results. When querying the API, the first response will provide access to all available pages. However, it's important to note that Google realtime search trends do not follow conventional pagination practices. Not to worry, though, as we have abstracted this complexity for you. Here's the caveat: only the first page will contain pagination information. Subsequent requests for the next page will not display pagination details. To ensure you retrieve all pages of data, your code should be designed to handle the following process: start by fetching the first response, and then use the provided pagination token to navigate through the subsequent pages. Parameter can only be used when frequency is set to `realtime`.",
       "group": "old_version_parameters"
     }
   },
