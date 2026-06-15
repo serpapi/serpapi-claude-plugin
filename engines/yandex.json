@@ -3,7 +3,7 @@
   "params": {
     "text": {
       "required": true,
-      "description": "Parameter defines the search query. You can use anything that you would use in a regular Yandex search.",
+      "description": "Parameter defines the search query. You can use anything that you would use in a regular Yandex search. It can be 400 characters at maximum. Yandex usually accepts first 40 words of the query.",
       "group": "search_query"
     },
     "yandex_domain": {
