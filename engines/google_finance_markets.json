@@ -7,7 +7,7 @@
         "indexes"
       ],
       "required": true,
-      "description": "Parameter is used for retrieving different market trends. Available options: `indexes` - Market indexes `most-active` - Most active `gainers` - Gainers `losers` - Losers `climate-leaders` - Climate leaders `cryptocurrencies` - Crypto `currencies` - Currencies",
+      "description": "Parameter is used for retrieving different market trends. Due to a recent Google Finance update, this parameter now only accepts `indexes` as a valid value.",
       "group": "search_query"
     },
     "hl": {

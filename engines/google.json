@@ -54,6 +54,15 @@
       "description": "Parameter enables to filter search. It's a string provided by Google as a filter. `uds` values are provided under the section: `filters` with `uds`, `q` and `serpapi_link` values provided for each filter.",
       "group": "advanced_google_parameters"
     },
+    "color_scheme": {
+      "type": "select",
+      "options": [
+        "light",
+        "dark"
+      ],
+      "description": "Parameter forces the selected color scheme to be used on the results page. If the parameter is not set, a random color scheme will be returned. Options: `light` - Light `dark` - Dark",
+      "group": "advanced_google_parameters"
+    },
     "google_domain": {
       "type": "select",
       "options": [

@@ -537,11 +537,11 @@
       "group": "advanced_google_flights_parameters"
     },
     "outbound_date": {
-      "description": "Parameter defines when you want to depart. Use a single YYYY-MM-DD date for an exact departure date, or two comma-separated dates for a flexible departure window. Examples: `2026-06-23` — depart on this exact date `2026-06-23,2026-07-22` — depart anytime within this window With a **single date**: return\\_date (single date) is required for round trip flights. With a **date range**: optionally combine with one of return\\_date (as a range), travel\\_duration, or trip\\_length to control the trip length. If none are provided, deals of any duration are returned. If omitted entirely, deals for any date are returned.",
+      "description": "Parameter defines when you want to depart. Use a single YYYY-MM-DD date for an exact departure date, or two comma-separated dates for a flexible departure window. Examples: `2026-06-30` — depart on this exact date `2026-06-30,2026-07-29` — depart anytime within this window With a **single date**: return\\_date (single date) is required for round trip flights. With a **date range**: optionally combine with one of return\\_date (as a range), travel\\_duration, or trip\\_length to control the trip length. If none are provided, deals of any duration are returned. If omitted entirely, deals for any date are returned.",
       "group": "date_parameters"
     },
     "return_date": {
-      "description": "Parameter defines when you want to return. Use a single YYYY-MM-DD date for an exact return date, or two comma-separated dates for a flexible return window. Examples: `2026-06-29` — return on this exact date (use with a single outbound\\_date) `2026-06-29,2026-07-29` — return anytime within this window (use with a range outbound\\_date) Not available for one-way flights (type = `2`). A single return\\_date must be paired with a single outbound\\_date. A range return\\_date must be paired with a range outbound\\_date. Cannot be combined with travel\\_duration or trip\\_length (use one or the other to define trip length).",
+      "description": "Parameter defines when you want to return. Use a single YYYY-MM-DD date for an exact return date, or two comma-separated dates for a flexible return window. Examples: `2026-07-06` — return on this exact date (use with a single outbound\\_date) `2026-07-06,2026-08-05` — return anytime within this window (use with a range outbound\\_date) Not available for one-way flights (type = `2`). A single return\\_date must be paired with a single outbound\\_date. A range return\\_date must be paired with a range outbound\\_date. Cannot be combined with travel\\_duration or trip\\_length (use one or the other to define trip length).",
       "group": "date_parameters"
     },
     "travel_duration": {
@@ -560,11 +560,11 @@
           "2 weeks - 3"
         ]
       ],
-      "description": "Parameter defines a preset trip duration when searching with flexible dates. Available options: `1` - 1 week (default) `2` - Weekend `3` - 2 weeks Can be used alone (deals of this duration, any departure date) or with outbound\\_date as a date range (e.g., `2026-06-23,2026-07-22`) to limit the departure window. Cannot be combined with return\\_date or trip\\_length. Not available for one-way flights (type = `2`).",
+      "description": "Parameter defines a preset trip duration when searching with flexible dates. Available options: `1` - 1 week (default) `2` - Weekend `3` - 2 weeks Can be used alone (deals of this duration, any departure date) or with outbound\\_date as a date range (e.g., `2026-06-30,2026-07-29`) to limit the departure window. Cannot be combined with return\\_date or trip\\_length. Not available for one-way flights (type = `2`).",
       "group": "date_parameters"
     },
     "trip_length": {
-      "description": "Parameter defines a custom trip length in days when searching with flexible dates. Provide a single number for an exact duration, or two comma-separated numbers for a min/max range. Examples: `7` — exactly 7 days `5,10` — between 5 and 10 days Can be used alone (deals of this length, any departure date) or with outbound\\_date as a date range (e.g., `2026-06-23,2026-07-22`) to limit the departure window. Cannot be combined with return\\_date or travel\\_duration. Not available for one-way flights (type = `2`). Each value must be at least `1`. When two values are provided, the first (min) must be ≤ the second (max).",
+      "description": "Parameter defines a custom trip length in days when searching with flexible dates. Provide a single number for an exact duration, or two comma-separated numbers for a min/max range. Examples: `7` — exactly 7 days `5,10` — between 5 and 10 days Can be used alone (deals of this length, any departure date) or with outbound\\_date as a date range (e.g., `2026-06-30,2026-07-29`) to limit the departure window. Cannot be combined with return\\_date or travel\\_duration. Not available for one-way flights (type = `2`). Each value must be at least `1`. When two values are provided, the first (min) must be ≤ the second (max).",
       "group": "date_parameters"
     },
     "adults": {
