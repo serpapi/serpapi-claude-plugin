@@ -5,6 +5,33 @@
       "required": true,
       "description": "Parameter defines the query you want to search.",
       "group": "search_query"
+    },
+    "num": {
+      "type": "number",
+      "description": "Parameter defines the number of results to return. (default: `10`).",
+      "group": "pagination"
+    },
+    "start": {
+      "type": "number",
+      "description": "Parameter defines the result offset for pagination. (e.g., `0` (default) is the first page, `10` is the second page, etc.).",
+      "group": "pagination"
+    },
+    "safe": {
+      "type": "select",
+      "options": [
+        "active",
+        "off"
+      ],
+      "description": "Parameter defines the level of filtering for adult content. It can be set to `active` (default) or `off`.",
+      "group": "filters"
+    },
+    "mode": {
+      "type": "select",
+      "options": [
+        "deep"
+      ],
+      "description": "Parameter defines the search mode. Set to `deep` for expanded recall via parallel sub-query fan-out. Returns more diverse results by decomposing the query into multiple aspects.",
+      "group": "filters"
     }
   },
   "common_params": {

@@ -990,6 +990,10 @@
       "description": "Parameter defines whether to include or exclude items from the seller(s) specified in `_sasl`. Available options: `1` - Only show items from sellers (default) `2` - Don't show items from sellers",
       "group": "advanced_filters"
     },
+    "popular_filters": {
+      "description": "Parameter allows filtering items based on their attributes. The structure is a list of `key=value` pairs separated by `&` (e.g. `Brand=Nespresso&Size=L`). To pass multiple values for the same filter, join them with `|` (e.g. `Brand=adidas|Majestic`). Values can be obtained from the `popular_filters[].parameter` field of the API response.",
+      "group": "advanced_filters"
+    },
     "_udlo": {
       "type": "number",
       "description": "Parameter defines the lowest price of items that should be included in the results (e.g. `10` will only return items that have higher price than `10`).",
