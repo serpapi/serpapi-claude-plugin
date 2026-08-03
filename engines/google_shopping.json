@@ -542,7 +542,7 @@
     },
     "start": {
       "type": "number",
-      "description": "Parameter defines the result offset. It skips the given number of results. It's used for pagination. (e.g., `0` (default) is the first page of results, `60` is the 2nd page of results, `120` is the 3rd page of results, etc.). For the new layout, the parameter is not recommended. To easily retrieve paginated results accurately, it is advisable to follow the link provided in `serpapi_pagination.next`.",
+      "description": "Parameter is intended to define the result offset for pagination. Google Shopping's current layout does not support offset pagination: the start parameter is ignored and every request returns the first page of results (around 40 items). The num parameter is still accepted and forwarded to Google, but the current layout returns a fixed page size, so it does not change the number of results returned.",
       "group": "pagination"
     }
   },
@@ -585,7 +585,7 @@
       "group": "serpapi_parameters"
     },
     "json_restrictor": {
-      "description": "Parameter defines the fields you want to restrict in the outputs for smaller, faster responses. See JSON Restrictor for more details.",
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
       "group": "serpapi_parameters"
     }
   }

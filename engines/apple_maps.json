@@ -39,7 +39,7 @@
     },
     "open_at": {
       "type": "number",
-      "description": "Parameter defines the time at which result locations should be open at. The value must be a Unix timestamp that is in the future, and no more than 24 hours from the current time. (e.g. `1785159447`).",
+      "description": "Parameter defines the time at which result locations should be open at. The value must be a Unix timestamp that is in the future, and no more than 24 hours from the current time. (e.g. `1785554324`).",
       "group": "refinement"
     },
     "locale": {
@@ -129,7 +129,7 @@
       "group": "serpapi_parameters"
     },
     "json_restrictor": {
-      "description": "Parameter defines the fields you want to restrict in the outputs for smaller, faster responses. See JSON Restrictor for more details.",
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
       "group": "serpapi_parameters"
     }
   }

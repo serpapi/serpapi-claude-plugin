@@ -501,12 +501,12 @@
     },
     "check_in_date": {
       "required": true,
-      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD**. e.g. `2026-07-28`",
+      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD**. e.g. `2026-08-01`",
       "group": "advanced_parameters"
     },
     "check_out_date": {
       "required": true,
-      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD**. e.g. `2026-07-29`",
+      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD**. e.g. `2026-08-02`",
       "group": "advanced_parameters"
     },
     "adults": {
@@ -655,7 +655,7 @@
       "group": "serpapi_parameters"
     },
     "json_restrictor": {
-      "description": "Parameter defines the fields you want to restrict in the outputs for smaller, faster responses. See JSON Restrictor for more details.",
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
       "group": "serpapi_parameters"
     }
   }

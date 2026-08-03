@@ -1,0 +1,141 @@
+{
+  "engine": "amazon_autocomplete",
+  "params": {
+    "k": {
+      "required": true,
+      "description": "Parameter defines the search query. A query that would be used to provide completion options on Amazon.",
+      "group": "search_query"
+    },
+    "amazon_domain": {
+      "type": "select",
+      "options": [
+        "amazon.com.au",
+        "amazon.com.be",
+        "amazon.com.br",
+        "amazon.ca",
+        "amazon.cn",
+        "amazon.eg",
+        "amazon.fr",
+        "amazon.de",
+        "amazon.in",
+        "amazon.it",
+        "amazon.co.jp",
+        "amazon.nl",
+        "amazon.pl",
+        "amazon.sa",
+        "amazon.sg",
+        "amazon.es",
+        "amazon.se",
+        "amazon.com.tr",
+        "amazon.ae",
+        "amazon.co.uk",
+        "amazon.com",
+        "amazon.com.mx"
+      ],
+      "description": "Parameter defines the Amazon domain to use. It defaults to `amazon.com`. Head to Amazon domains for a full list of supported Amazon domains.",
+      "group": "localization"
+    },
+    "amazon_department": {
+      "type": "select",
+      "options": [
+        "aps",
+        "alexa-skills",
+        "vehicles",
+        "amazon-devices",
+        "amazonfresh",
+        "amazon-global-store",
+        "bazaar",
+        "amazon-one-medical",
+        "amazon-pharmacy",
+        "warehouse-deals",
+        "appliances",
+        "mobile-apps",
+        "arts-crafts",
+        "audible",
+        "automotive",
+        "baby-products",
+        "beauty",
+        "stripbooks",
+        "popular",
+        "mobile",
+        "fashion",
+        "fashion-womens",
+        "fashion-mens",
+        "fashion-girls",
+        "fashion-boys",
+        "fashion-baby",
+        "collectibles",
+        "computers",
+        "financial",
+        "digital-music",
+        "electronics",
+        "lawngarden",
+        "gift-cards",
+        "grocery",
+        "handmade",
+        "hpc",
+        "local-services",
+        "garden",
+        "industrial",
+        "prime-exclusive",
+        "digital-text",
+        "fashion-luggage",
+        "luxury",
+        "magazines",
+        "movies-tv",
+        "mi",
+        "office-products",
+        "pets",
+        "luxury-beauty",
+        "instant-video",
+        "samedaystore",
+        "smart-home",
+        "software",
+        "sporting",
+        "specialty-aps-sns",
+        "subscribe-with-amazon",
+        "tools",
+        "toys-and-games",
+        "under-ten-dollars",
+        "videogames",
+        "vons",
+        "wholefoods"
+      ],
+      "description": "Parameter defines the Amazon department to scope suggestions to. Defaults to `aps` (All Departments). Head to Amazon departments for a full list of supported Amazon departments.",
+      "group": "advanced_autocomplete_parameters"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `amazon_autocomplete` to use the Amazon Autocomplete API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Amazon Autocomplete results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the final output you want. It can be set to json (default) to get a structured `JSON` of the results, or `html` to get the raw html retrieved.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}
