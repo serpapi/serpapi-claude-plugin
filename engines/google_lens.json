@@ -3,7 +3,7 @@
   "params": {
     "url": {
       "required": true,
-      "description": "Parameter defines the URL of an image to perform the Google Lens search.",
+      "description": "Parameter defines the URL of an image to perform the Google Lens search. Alternatively, you can use image\\_id parameter if you prefer to perform a search by uploading an image.",
       "group": "search_query"
     },
     "hl": {
@@ -363,6 +363,11 @@
       "type": "checkbox",
       "description": "Parameter defines whether Google auto-crops the image to focus on the detected area of interest. It can be set to `true` or `false` (default). Auto Crop does not work with type set to `about_this_image`",
       "group": "advanced_parameters"
+    },
+    "image_id": {
+      "type": "image",
+      "description": "Parameter defines the Image ID you want to use for the search. The Image ID can be obtained using the Image API. When using the image\\_id parameter, the url parameter can be omitted. Visit the documentation for the step-by-step guide.",
+      "group": "upload_image_parameters"
     }
   },
   "common_params": {

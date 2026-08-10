@@ -36,7 +36,7 @@
       "group": "pagination"
     },
     "gpc": {
-      "description": "Parameter defines the time period for results. (e.g., `stf=1784913524,1785518324|stftype=1` only returns results from the past 7 days. First integer within the parameter,`1784913524` is Unix Timestamp for 7 days ago. Second integer,`1785518324` is Unix Timestamp for now.).",
+      "description": "Parameter defines the time period for results. (e.g., `stf=1785612107,1786216907|stftype=1` only returns results from the past 7 days. First integer within the parameter,`1785612107` is Unix Timestamp for 7 days ago. Second integer,`1786216907` is Unix Timestamp for now.).",
       "group": "advanced_filters"
     },
     "q5": {
