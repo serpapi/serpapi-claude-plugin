@@ -523,11 +523,11 @@
       "group": "advanced_google_travel_explore_parameters"
     },
     "outbound_date": {
-      "description": "Parameter defines the outbound date. The format is YYYY-MM-DD. e.g. `2026-08-09`",
+      "description": "Parameter defines the outbound date. The format is YYYY-MM-DD. e.g. `2026-08-15`",
       "group": "advanced_google_travel_explore_parameters"
     },
     "return_date": {
-      "description": "Parameter defines the return date. The format is YYYY-MM-DD. e.g. `2026-08-15` Parameter is required if type parameter is set to: `1` (Round trip)",
+      "description": "Parameter defines the return date. The format is YYYY-MM-DD. e.g. `2026-08-21` Parameter is required if type parameter is set to: `1` (Round trip)",
       "group": "advanced_google_travel_explore_parameters"
     },
     "month": {
@@ -699,7 +699,7 @@
       "group": "serpapi_parameters"
     },
     "output": {
-      "description": "Parameter defines the final output you want. It can be set to json (default) to get a structured `JSON` of the results, or `html` to get the raw html retrieved.",
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a markdown-formatted version optimized for LLMs and AI agents.",
       "group": "serpapi_parameters"
     },
     "json_restrictor": {

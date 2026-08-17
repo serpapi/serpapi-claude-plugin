@@ -501,12 +501,12 @@
     },
     "check_in_date": {
       "required": true,
-      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD**. e.g. `2026-08-09`",
+      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD**. e.g. `2026-08-15`",
       "group": "advanced_parameters"
     },
     "check_out_date": {
       "required": true,
-      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD**. e.g. `2026-08-10`",
+      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD**. e.g. `2026-08-16`",
       "group": "advanced_parameters"
     },
     "adults": {
@@ -651,7 +651,7 @@
       "group": "serpapi_parameters"
     },
     "output": {
-      "description": "Parameter defines the final output you want. It can be set to json (default) to get a structured `JSON` of the results, or `html` to get the raw html retrieved.",
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a markdown-formatted version optimized for LLMs and AI agents.",
       "group": "serpapi_parameters"
     },
     "json_restrictor": {
