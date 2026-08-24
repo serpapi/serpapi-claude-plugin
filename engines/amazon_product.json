@@ -345,6 +345,11 @@
       "type": "checkbox",
       "description": "Include results from other sellers.",
       "group": "advanced_amazon_parameters"
+    },
+    "all_related_products": {
+      "type": "checkbox",
+      "description": "Set to `true` to retrieve all items in `related_products` and `related_product_sections`, not just the first page. May yield better results but with a longer response time. Defaults to `false`.",
+      "group": "advanced_amazon_parameters"
     }
   },
   "common_params": {

@@ -1,0 +1,205 @@
+{
+  "engine": "zillow",
+  "params": {
+    "region_id": {
+      "description": "Parameter defines the Zillow region ID for the area you want to search in. A region can be a city, neighborhood, ZIP code, county, or state (e.g., `10221` for Austin, TX). To find a Region ID, go to Zillow, search for the area you want, and extract the number preceding `_rid` from the resulting URL. For example, in `https://www.zillow.com/homes/10221_rid/`, the Region ID is `10221`. Either region\\_id or map\\_bounds should be set. They can also be used together to restrict a region search to the given map bounds.",
+      "group": "search_query"
+    },
+    "map_bounds": {
+      "description": "Parameter defines the GPS coordinates of the map area to search in, so only properties within these bounds are shown. Its value must be 4 comma-separated numbers matching the following format: `north` + `,` + `east` + `,` + `south` + `,` + `west` `north` and `south` are latitudes, and `east` and `west` are longitudes (e.g., `30.51,-97.56,30.14,-98.05` for Austin, TX). Either region\\_id or map\\_bounds should be set. They can also be used together to restrict a region search to the given map bounds.",
+      "group": "geographic_location"
+    },
+    "status_type": {
+      "type": "select",
+      "options": [
+        "sale",
+        "rent",
+        "sold"
+      ],
+      "description": "Parameter defines the type of properties to show. It defaults to `sale`. It also determines which filters are applicable. Available options: `sale` - For sale `rent` - For rent `sold` - Sold",
+      "group": "advanced_filters"
+    },
+    "price": {
+      "description": "Parameter defines the price range of the properties to show. Provide a single number for a minimum (e.g., `100000`), or two comma-separated numbers for a min/max range (e.g., `100000,400000`). To set a maximum only, omit the first number (e.g., `,400000`). When `status_type` is `sale` or `sold`, it filters by the listing price; when `status_type` is `rent`, it filters by the monthly rent instead.",
+      "group": "advanced_filters"
+    },
+    "beds": {
+      "description": "Parameter defines the number of bedrooms. Provide a single number for a minimum (e.g., `2` for 2+ bedrooms), or two comma-separated numbers for a min/max range (e.g., `1,3`). To set a maximum only, omit the first number (e.g., `,3`).",
+      "group": "advanced_filters"
+    },
+    "baths": {
+      "description": "Parameter defines the number of bathrooms. Provide a single number for a minimum (e.g., `2` for 2+ bathrooms), or two comma-separated numbers for a min/max range (e.g., `1,3`). To set a maximum only, omit the first number (e.g., `,3`).",
+      "group": "advanced_filters"
+    },
+    "home_type": {
+      "description": "Parameter defines the types of homes to show. It's a comma-separated list acting as the complete selection: only the listed types are shown, and every other type is excluded (e.g., `house,condo` only shows houses and condos). To exclude a single type, list all the others (e.g., `house,townhome,multi_family,condo,lot_land,manufactured` to exclude apartments). When not set, all home types are shown. The available options depend on `status_type`. Options when `status_type` is `sale` or `sold`: `house` - Houses `townhome` - Townhomes `multi_family` - Multi-family `condo` - Condos/Co-ops `lot_land` - Lots/Land `apartment` - Apartments `manufactured` - Manufactured Options when `status_type` is `rent`: `house` - Houses `apartment_condo` - Apartments/Condos `townhome` - Townhomes",
+      "group": "advanced_filters"
+    },
+    "sqft": {
+      "description": "Parameter defines the square footage of the properties to show. Provide a single number for a minimum (e.g., `1250`), or two comma-separated numbers for a min/max range (e.g., `1250,3000`). To set a maximum only, omit the first number (e.g., `,3000`). When `status_type` is `rent`, it corresponds to Zillow's home size filter.",
+      "group": "advanced_filters"
+    },
+    "year_built": {
+      "description": "Parameter defines the year the properties were built. Provide a single year for a minimum (e.g., `2000`), or two comma-separated years for a min/max range (e.g., `2000,2010`). To set a maximum only, omit the first year (e.g., `,2010`).",
+      "group": "advanced_filters"
+    },
+    "has_garage": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show properties with a garage. It can be set to `true` to only show properties with a garage, or `false` (default) to show all properties.",
+      "group": "advanced_filters"
+    },
+    "single_story": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show single-story properties. It can be set to `true` to only show single-story properties, or `false` (default) to show all properties.",
+      "group": "advanced_filters"
+    },
+    "age_55_plus": {
+      "type": "select",
+      "options": [
+        "include",
+        "exclude",
+        "only"
+      ],
+      "description": "Parameter defines how to handle 55+ communities. It defaults to `include`. Available options: `include` - Include 55+ communities `exclude` - Exclude 55+ communities `only` - Only show 55+ communities",
+      "group": "advanced_filters"
+    },
+    "amenities": {
+      "description": "Parameter defines the amenities the properties must have. It's a comma-separated list of options (e.g., `ac,pool`). The available options depend on `status_type`. Options when `status_type` is `sale` or `sold`: `ac` - Must have A/C `pool` - Must have pool `waterfront` - Waterfront Options when `status_type` is `rent`: `in_unit_laundry` - In-unit laundry `parking` - Parking available `ac` - Must have A/C `utilities_included` - Utilities included `elevator` - Elevator access `basement` - Basement `dishwasher` - Dishwasher `fitness_center` - Fitness center `hardwood_floor` - Hardwood floor `pool` - Must have pool `high_speed_internet` - High-speed internet `waterfront` - Waterfront `furnished` - Furnished `outdoor_space` - Outdoor space `by_owner` - For rent by owner `disabled_access` - Disabled access `controlled_access` - Controlled access `apartment_community` - Apartment community",
+      "group": "advanced_filters"
+    },
+    "view": {
+      "description": "Parameter defines the views the properties must have. It's a comma-separated list of options (e.g., `city,water`). Available options: `city` - City `mountain` - Mountain `park` - Park `water` - Water",
+      "group": "advanced_filters"
+    },
+    "price_reduction": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show properties with a price reduction. It can be set to `true` to only show properties with a price reduction, or `false` (default) to show all properties.",
+      "group": "advanced_filters"
+    },
+    "time_on_zillow": {
+      "description": "Parameter defines the maximum time the properties have been listed on Zillow. Provide a number of days (e.g., `14` for 14 days), or one of the supported month values: `6m`, `12m`, `24m`, or `36m`. It defaults to any time.",
+      "group": "advanced_filters"
+    },
+    "keywords": {
+      "description": "Parameter defines the keywords to filter the results by. It's a comma-separated list of keywords (e.g., `yard` or `pool, bbq`).",
+      "group": "advanced_filters"
+    },
+    "hoa_max": {
+      "type": "number",
+      "description": "Parameter defines the maximum HOA (Homeowners Association) fee of the properties to show. Set it to `0` to only show properties with no HOA fee. It defaults to any HOA fee. It only applies when `status_type` is `sale` or `sold`.",
+      "group": "sale_and_sold_filters"
+    },
+    "parking_spots": {
+      "type": "number",
+      "description": "Parameter defines the minimum number of parking spots the properties must have (e.g., `2` for 2+ parking spots). It only applies when `status_type` is `sale` or `sold`.",
+      "group": "sale_and_sold_filters"
+    },
+    "lot_size": {
+      "description": "Parameter defines the lot size of the properties to show, in square feet. Provide a single number for a minimum (e.g., `21780`), or two comma-separated numbers for a min/max range (e.g., `21780,217800`). To set a maximum only, omit the first number (e.g., `,217800`). It only applies when `status_type` is `sale` or `sold`.",
+      "group": "sale_and_sold_filters"
+    },
+    "basement": {
+      "description": "Parameter defines the type of basement the properties must have. It's a comma-separated list of options (e.g., `finished,unfinished`). It only applies when `status_type` is `sale` or `sold`. Available options: `finished` - Finished `unfinished` - Unfinished",
+      "group": "sale_and_sold_filters"
+    },
+    "listing_type": {
+      "description": "Parameter defines the complete list of listing types to show, comma-separated: only the listed types are included, and all others are excluded. It only applies when `status_type` is `sale`. When not set, it defaults to `owner,agent,new_construction,foreclosure,auction`. For example, to exclude auctions use `owner,agent,new_construction,foreclosure`; to also show foreclosed properties on top of the defaults, use `owner,agent,new_construction,foreclosure,auction,foreclosed`. Available options: `owner` - Owner posted `agent` - Agent listed `new_construction` - New construction `foreclosure` - Foreclosures `auction` - Auctions `foreclosed` - Foreclosed `pre_foreclosure` - Pre-foreclosures",
+      "group": "sale_only_filters"
+    },
+    "listing_status": {
+      "description": "Parameter defines the complete list of listing statuses to show, comma-separated: only the listed statuses are included, and all others are excluded. It only applies when `status_type` is `sale`. When not set, it defaults to `active,coming_soon,zillow_preview`. For example, to exclude Zillow previews use `active,coming_soon`; to also show pending listings on top of the defaults, use `active,coming_soon,zillow_preview,pending`. Available options: `active` - Active `coming_soon` - Coming soon `zillow_preview` - Zillow preview `accepting_backup_offers` - Accepting backup offers `pending` - Pending & under contract",
+      "group": "sale_only_filters"
+    },
+    "tours": {
+      "description": "Parameter defines the tour options the properties must have. It's a comma-separated list of options (e.g., `open_house,3d_tour`). It only applies when `status_type` is `sale`. Available options: `open_house` - Must have open house `3d_tour` - Must have 3D Tour `showcase` - Must have Showcase",
+      "group": "sale_only_filters"
+    },
+    "space": {
+      "type": "select",
+      "options": [
+        "any",
+        "entire_place",
+        "room"
+      ],
+      "description": "Parameter defines the type of rental space to show. It only applies when `status_type` is `rent`. It defaults to `entire_place`. Available options: `any` - Any `entire_place` - Entire place `room` - Room for rent",
+      "group": "rent_filters"
+    },
+    "move_in_date": {
+      "description": "Parameter defines the latest move-in date of the rentals to show: only rentals available on or before the date are shown. Provide a date in `YYYY-MM-DD` format (e.g., `2026-07-22`). It only applies when `status_type` is `rent`. Rentals without an availability date are still shown; use `hide_no_date_listings` to hide them.",
+      "group": "rent_filters"
+    },
+    "hide_no_date_listings": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to hide rentals that don't specify an availability date. It can be set to `true` to hide them, or `false` (default) to show them. It's meant to be used together with `move_in_date`, and only applies when `status_type` is `rent`.",
+      "group": "rent_filters"
+    },
+    "pets": {
+      "description": "Parameter defines the pet policies the rentals must have. It's a comma-separated list of options (e.g., `cats,small_dogs`). `no_pets` cannot be combined with the other options. It only applies when `status_type` is `rent`. Available options: `cats` - Allows cats `small_dogs` - Allows small dogs `large_dogs` - Allows large dogs `no_pets` - No pets allowed",
+      "group": "rent_filters"
+    },
+    "listing_features": {
+      "description": "Parameter defines the listing features the rentals must have. It's a comma-separated list of options (e.g., `3d_tour,instant_tour`). It only applies when `status_type` is `rent`. Available options: `3d_tour` - Must have 3D Tour `accepts_applications` - Accepts Zillow Applications `instant_tour` - Instant Tour Available",
+      "group": "rent_filters"
+    },
+    "short_term_lease": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to only show rentals with a short-term lease available. It can be set to `true` to only show them, or `false` (default) to show all rentals. It only applies when `status_type` is `rent`.",
+      "group": "rent_filters"
+    },
+    "sort_by": {
+      "type": "select",
+      "options": [
+        "globalrelevanceex",
+        "featured",
+        "priced",
+        "pricea",
+        "days",
+        "beds",
+        "baths",
+        "size",
+        "lot",
+        "priorityscore"
+      ],
+      "description": "Parameter defines the sorting order of the results. It defaults to `globalrelevanceex` (Homes for You). Available options: `globalrelevanceex` - Homes for You `featured` - Verified Source `priced` - Price (high to low) `pricea` - Price (low to high) `days` - Newest `beds` - Bedrooms `baths` - Bathrooms `size` - Square Feet `lot` - Lot Size `priorityscore` - Recommended `featured` (Verified Source) and `priorityscore` (Recommended) are only available when `status_type` is `rent`.",
+      "group": "sorting"
+    },
+    "page": {
+      "type": "number",
+      "description": "Value is used to get results on a specific page. (e.g., `1` (default) is the first page of results, `2` is the 2nd page of results, `3` is the 3rd page of results, etc.).",
+      "group": "pagination"
+    }
+  },
+  "common_params": {
+    "engine": {
+      "required": true,
+      "description": "Set parameter to `zillow` to use the Zillow API engine.",
+      "group": "serpapi_parameters"
+    },
+    "no_cache": {
+      "type": "checkbox",
+      "description": "Parameter will force SerpApi to fetch the Zillow results even if a cached version is already present. A cache is served only if the query and all parameters are exactly the same. Cache expires after 1h. Cached searches are free, and are not counted towards your searches per month. It can be set to `false` (default) to allow results from the cache, or `true` to disallow results from the cache. no\\_cache and async parameters should not be used together.",
+      "group": "serpapi_parameters"
+    },
+    "async": {
+      "description": "Parameter defines the way you want to submit your search to SerpApi. It can be set to `false` (default) to open an HTTP connection and keep it open until you got your search results, or `true` to just submit your search to SerpApi and retrieve them later. In this case, you'll need to use our Searches Archive API to retrieve your results. async and no\\_cache parameters should not be used together. async should not be used on accounts with Ludicrous Speed enabled.",
+      "group": "serpapi_parameters"
+    },
+    "zero_trace": {
+      "description": "Enterprise only. Parameter enables ZeroTrace mode. It can be set to `false` (default) or `true`. Enable this mode to skip storing search parameters, search files, and search metadata on our servers. This may make debugging more difficult.",
+      "group": "serpapi_parameters"
+    },
+    "api_key": {
+      "required": true,
+      "description": "Parameter defines the SerpApi private key to use.",
+      "group": "serpapi_parameters"
+    },
+    "output": {
+      "description": "Parameter defines the format of the result. It can be set to `json` (default) to get a structured JSON of the results, `html` to get the raw HTML retrieved, or `md` to get a markdown-formatted version optimized for LLMs and AI agents.",
+      "group": "serpapi_parameters"
+    },
+    "json_restrictor": {
+      "description": "Parameter defines the fields you want to include in the output, reducing payload size for faster response. See the JSON Restrictor documentation for more details.",
+      "group": "serpapi_parameters"
+    }
+  }
+}

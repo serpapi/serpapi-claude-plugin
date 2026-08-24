@@ -579,7 +579,7 @@
           "Family - Sci-fi & fantasy"
         ]
       ],
-      "description": "Parameter defines the movies store category. Head to the Google Play store Movies Categories for a full list of supported Google Play Books store categories.",
+      "description": "Parameter defines the movies store category. See the Google Play Store's movie categories for a full list.",
       "group": "google_play_categories"
     },
     "age": {

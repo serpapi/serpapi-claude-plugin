@@ -83,7 +83,7 @@
     },
     "ps": {
       "type": "number",
-      "description": "Determines the number of items per page. There are scenarios where The Home Depot overrides the ps value. By default, The Home Depot returns `24` results. The maximum number of results it can return is `48`.",
+      "description": "Determines the number of items per page. There are scenarios where The Home Depot overrides the ps value. By default, The Home Depot returns `24` (maximum allowed value) results.",
       "group": "pagination"
     },
     "pagesize": {

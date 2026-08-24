@@ -2,7 +2,7 @@
   "engine": "google_play_books",
   "params": {
     "q": {
-      "description": "Parameter defines the query you want to search in Google Play Books Store.",
+      "description": "Parameter defines the query you want to search in Google Play Books Store, such as a book title or author. Google also usually accepts ISBN numbers like `9780593135211` if there is an exact match, and if dashes and spaces are excluded.",
       "group": "search_query"
     },
     "gl": {
@@ -878,7 +878,7 @@
         "coll_1704",
         "coll_1705"
       ],
-      "description": "Parameter defines the books store category. Head to the Google Play store Books Categories for a full list of supported Google Play Books store categories.",
+      "description": "Parameter defines the books store category. See the Google Play Store's book categories for a full list.",
       "group": "google_play_categories"
     },
     "price": {
