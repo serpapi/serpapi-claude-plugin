@@ -2,9 +2,12 @@
   "engine": "naver_ai_overview",
   "params": {
     "query": {
-      "required": true,
-      "description": "Parameter defines the query you want to search.",
+      "description": "Parameter defines the query you want to search. You can use anything that you would use in a regular Naver search to get the AI Briefing.",
       "group": "search_query"
+    },
+    "page_token": {
+      "description": "Parameter defines the token needed to retrieve the business AI Briefing. Use `ai_briefing.page_token` from our Naver Search API. page\\_token and query parameters can't be used together.",
+      "group": "advanced_filters"
     }
   },
   "common_params": {

@@ -26,6 +26,11 @@
       "description": "The parameter determine if the advertiser promotes political advertisement. Political advertisement is a different category than regular advertisements, and will not appear on the results unless this parameter is set to `true`. If this parameter is set to `true`, only political advertisements will appear on the results. By default it is `false`. This parameter can only be used alongside with the `region` parameter.",
       "group": "advanced_ads_transparency_parameters"
     },
+    "get_advertiser": {
+      "type": "checkbox",
+      "description": "Parameter defines whether to fetch the advertiser details (legal name and country of registration). When set to `true`, an additional request is made and the `advertiser` block is included in the results. By default it is `false`. This parameter can only be used with a single advertiser\\_id.",
+      "group": "advanced_ads_transparency_parameters"
+    },
     "region": {
       "type": "dropdown",
       "options": [
