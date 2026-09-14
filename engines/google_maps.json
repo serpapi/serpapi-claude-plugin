@@ -316,7 +316,7 @@
         "vi",
         "zu"
       ],
-      "description": "Parameter defines the language to use for the Google Maps search. It's a two-letter language code. (e.g., `en` for English, `es` for Spanish, or `fr` for French). Head to the Google Maps languages page for a full list of supported Google Maps languages.",
+      "description": "Parameter defines the language to use for the Google Maps search. It's a two or three-letter language code. (e.g., `en` for English, `es` for Spanish, or `fr` for French), optionally followed by a two-letter or three-digit region code (e.g., `en-gb` for British English, or `es-419` for Latin American Spanish). Head to the Google Maps languages page for a full list of supported Google Maps languages.",
       "group": "localization"
     },
     "gl": {
