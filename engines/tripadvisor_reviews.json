@@ -3,7 +3,7 @@
   "params": {
     "place_id": {
       "required": true,
-      "description": "Parameter defines the Tripadvisor place ID. To extract the ID of a place, you can use our Tripadvisor Search API. NOTE: Tripadvisor has discontinued support for Vacation Rentals. As a result, requesting details for a Vacation Rental `place_id` may return incomplete incomplete data or no data at all.",
+      "description": "Parameter defines the Tripadvisor place ID. To extract the ID of a place, you can use our Tripadvisor Search API. NOTE: Tripadvisor has discontinued support for Vacation Rentals. As a result, requesting details for a Vacation Rental `place_id` may return incomplete data or no data at all.",
       "group": "search_query"
     },
     "tripadvisor_domain": {

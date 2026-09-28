@@ -2,8 +2,7 @@
   "engine": "google_about_this_result",
   "params": {
     "q": {
-      "required": true,
-      "description": "Parameter defines the URL of a website which results you what to show. Value should be formatted as: `URL` (e.g. `https://www.starbucks.com/`)",
+      "description": "Parameter defines the URL of the website you want results for. Value should be formatted as: `URL` (e.g. `https://www.starbucks.com/`) Parameter is required unless req\\_token is used instead. q and req\\_token can't be used together.",
       "group": "search_query"
     },
     "google_domain": {
@@ -1099,6 +1098,10 @@
       ],
       "description": "Parameter defines the language to use for the Google About This Result search. It's a two or three-letter language code. (e.g., `en` for English, `es` for Spanish, or `fr` for French), optionally followed by a two-letter or three-digit region code (e.g., `en-gb` for British English, or `es-419` for Latin American Spanish). Head to the Google languages page for a full list of supported Google languages.",
       "group": "localization"
+    },
+    "req_token": {
+      "description": "Parameter defines the encoded request token Google uses to identify the website for the About This Result search. It can be used instead of q. It can be found in the `about_page_link` and `about_page_serpapi_link` fields of organic\\_results for some \"About this result\" layouts. q and req\\_token can't be used together.",
+      "group": "request_token"
     },
     "ilps": {
       "description": "Parameter defines unique ID of a website which results you what to show.",
