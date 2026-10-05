@@ -1027,6 +1027,15 @@
       "description": "Show only products from small business. This parameter overrides corresponding filter embedded into shoprs parameter.",
       "group": "advanced_filters"
     },
+    "safe": {
+      "type": "select",
+      "options": [
+        "active",
+        "off"
+      ],
+      "description": "Parameter defines the level of filtering for adult content. It can be set to `active` or `off`, by default Google will omit explicit content.",
+      "group": "advanced_filters"
+    },
     "start": {
       "type": "number",
       "description": "Parameter is intended to define the result offset for pagination. Google Shopping's current layout does not support offset pagination: the start parameter is ignored and every request returns the first page of results (around 40 items). The num parameter is still accepted and forwarded to Google, but the current layout returns a fixed page size, so it does not change the number of results returned.",

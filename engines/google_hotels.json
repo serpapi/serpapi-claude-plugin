@@ -988,12 +988,12 @@
     },
     "check_in_date": {
       "required": true,
-      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD**. e.g. `2026-09-27`",
+      "description": "Parameter defines the check-in date. The format is **YYYY-MM-DD**. e.g. `2026-10-05`",
       "group": "advanced_parameters"
     },
     "check_out_date": {
       "required": true,
-      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD**. e.g. `2026-09-28`",
+      "description": "Parameter defines the check-out date. The format is **YYYY-MM-DD**. e.g. `2026-10-06`",
       "group": "advanced_parameters"
     },
     "adults": {

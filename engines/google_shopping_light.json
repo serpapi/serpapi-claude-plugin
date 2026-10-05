@@ -983,6 +983,15 @@
       "description": "Show only products from small business. This parameter overrides corresponding filter embedded into shoprs parameter.",
       "group": "advanced_filters"
     },
+    "safe": {
+      "type": "select",
+      "options": [
+        "active",
+        "off"
+      ],
+      "description": "Parameter defines the level of filtering for adult content. It can be set to `active` or `off`, by default Google will omit explicit content.",
+      "group": "advanced_filters"
+    },
     "start": {
       "type": "number",
       "description": "Parameter defines the result offset. It skips the given number of results. It's used for pagination. (e.g., `0` (default) is the first page of results, `10` is the 2nd page of results, `20` is the 3rd page of results, etc.).",

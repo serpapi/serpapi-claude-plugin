@@ -825,12 +825,11 @@
       "type": "select",
       "options": [
         "all",
-        "about_this_image",
         "products",
         "exact_matches",
         "visual_matches"
       ],
-      "description": "Parameter defines the type of search to perform. By default, the search type is `all`. Available options: `all` - All `about_this_image` - About This Image `products` - Products `exact_matches` - Exact Matches `visual_matches` - Visual Matches.",
+      "description": "Parameter defines the type of search to perform. By default, the search type is `all`. Available options: `all` - All `products` - Products `exact_matches` - Exact Matches `visual_matches` - Visual Matches.",
       "group": "search_type"
     },
     "q": {
@@ -848,7 +847,7 @@
     },
     "auto_crop": {
       "type": "checkbox",
-      "description": "Parameter defines whether Google auto-crops the image to focus on the detected area of interest. It can be set to `true` or `false` (default). Auto Crop does not work with type set to `about_this_image`",
+      "description": "Parameter defines whether Google auto-crops the image to focus on the detected area of interest. It can be set to `true` or `false` (default).",
       "group": "advanced_parameters"
     },
     "image_id": {

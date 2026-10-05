@@ -958,7 +958,7 @@
       "group": "advanced_filters"
     },
     "show_only": {
-      "description": "Parameter defines the list of filters you can apply to the results. Available options **(case-sensitive)**: `Complete` - Completed items `Sold` - Sold items `FR` - Free returns `RPA` - Returns accepted `AS` - Authorized seller `Savings` - Deals and savings `SaleItems` - Sale items `Lots` - Listed as lots `Charity` - Benefits charity `AV` - Authenticity Guarantee `FS` - Free shipping `LPickup` - Local pickup You can also combine multiple filter values by joining them with a comma (`value` + `,` + `value`; eg: `Sold,FS`).",
+      "description": "Parameter defines the list of filters you can apply to the results. Available options **(case-sensitive)**: `FR` - Free returns `RPA` - Returns accepted `AS` - Authorized seller `Savings` - Deals and savings `SaleItems` - Sale items `Lots` - Listed as lots `Charity` - Benefits charity `AV` - Authenticity Guarantee `FS` - Free shipping `LPickup` - Local pickup You can also combine multiple filter values by joining them with a comma (`value` + `,` + `value`; eg: `FS,RPA`). The `Sold` and `Complete` options are deprecated and no longer supported.",
       "group": "advanced_filters"
     },
     "buying_format": {
