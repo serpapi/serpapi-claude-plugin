@@ -1,12 +1,10 @@
-![SerpApi logo](https://raw.githubusercontent.com/serpapi/serpapi-claude-plugin/main/assets/logo.png)
-
-# SerpApi for Claude
+# <img src="https://raw.githubusercontent.com/serpapi/serpapi-claude-plugin/main/assets/logo.png" width="30" height="30"/> SerpApi for Claude
 
 Ask Claude to search Google, Google Maps, Amazon, YouTube, and 100+ other search engines
 through [SerpApi](https://serpapi.com). Claude picks the engine that fits your question, such as Google Maps for a local
 business or Google Flights for fares, and answers with links to its sources.
 
-The plugin works in Claude Code and in claude.ai.
+The plugin works in Claude Code, claude.ai, and the Claude desktop app, including Cowork.
 
 ## Before you start
 
@@ -28,17 +26,18 @@ Claude Code asks for your API key during the install and stores it securely in y
 To add or change the key later, run `/plugin configure serpapi@serpapi-plugins` and then `/reload-plugins`. You need
 this if you installed with `claude plugin install` from a terminal, because that command doesn't ask for the key.
 
-## Set up in claude.ai
+## Set up in claude.ai or the Claude desktop app
 
-1. Open **Customize > Plugins**, select **Add > Add marketplace**, enter `serpapi/serpapi-claude-plugin`, and add the
-   SerpApi plugin.
+1. In claude.ai or the desktop app, open **Customize > Plugins**, select **Add > Add marketplace**, enter
+   `serpapi/serpapi-claude-plugin`, and add the SerpApi plugin.
 2. Open the plugin's **Connectors** tab and select **Connect** next to `serpapi`.
 3. Under **Authentication**, choose **No sign-in**.
 4. Under **Request headers**, enter `Bearer YOUR_API_KEY` as the value of the `authorization` header, with your key in
    place of `YOUR_API_KEY`. Then add the connector.
 
-claude.ai stores the header value securely and doesn't show it again. A plugin you add in claude.ai also appears in
-Claude Code, which keeps its own copy of the key, so set the key there too as described above.
+Claude stores the header value securely and doesn't show it again. Plugins and connectors belong to your Claude account,
+so this one setup covers claude.ai, the desktop app, and Cowork. The plugin also appears in Claude Code, which keeps its
+own copy of the key, so set the key there too as described above.
 
 ## Search
 
@@ -48,8 +47,8 @@ In Claude Code, use the `/serpapi:search` command:
 /serpapi:search coffee shops near Times Square
 ```
 
-In claude.ai, type `/` and choose `serpapi:search` from the menu. In either app you can also ask in your own words, such
-as "Use SerpApi to find this week's news about solar energy." Some other requests to try:
+In claude.ai, the desktop app, and Cowork, type `/` and choose `serpapi:search` from the menu. In any of them you can also
+ask in your own words, such as "Use SerpApi to find this week's news about solar energy." Some other requests to try:
 
 - "Compare Sony WH-1000XM5 prices on Amazon, Walmart, and Google Shopping."
 - "Show the newest reviews for The French Laundry in Yountville."
@@ -73,7 +72,7 @@ the [pricing page](https://serpapi.com/pricing) lists the plans.
 
 When Claude searches, your query and any details it needs, such as a location or travel dates, go to SerpApi's MCP
 server at `mcp.serpapi.com`. Your API key goes with each request in an authorization header. Claude Code sends it from
-your computer, and claude.ai sends it from the connector you set up. SerpApi runs the search and returns the results to
+your computer. In claude.ai and the desktop app, it comes from the connector you set up. SerpApi runs the search and returns the results to
 Claude.
 
 Claude may also open SerpApi's public documentation to check an engine's options, or open a result's web page to confirm
@@ -90,9 +89,9 @@ Claude shows you SerpApi's error message. The common ones:
 
 | Error                                       | What to do                                                                                                                                                                                                                  |
 |---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Missing API key, or Invalid SerpApi API key | In Claude Code, run `/plugin configure serpapi@serpapi-plugins`, enter your key, then run `/reload-plugins`. In claude.ai, disconnect `serpapi` on the plugin's **Connectors** tab and connect it again with the right key. |
+| Missing API key, or Invalid SerpApi API key | In Claude Code, run `/plugin configure serpapi@serpapi-plugins`, enter your key, then run `/reload-plugins`. In claude.ai or the desktop app, disconnect `serpapi` on the plugin's **Connectors** tab and connect it again with the right key. |
 | Rate limit exceeded                         | You've used this month's searches or your plan's hourly limit. Check the [dashboard](https://serpapi.com/dashboard).                                                                                                        |
-| Claude has no SerpApi tools                 | In Claude Code, run `/mcp` and check that the SerpApi server is connected. In claude.ai, check that the plugin's **Connectors** tab shows `serpapi` as connected.                                                           |
+| Claude has no SerpApi tools                 | In Claude Code, run `/mcp` and check that the SerpApi server is connected. In claude.ai or the desktop app, check that the plugin's **Connectors** tab shows `serpapi` as connected.                                                           |
 
 ## Help
 

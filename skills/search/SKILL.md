@@ -18,7 +18,7 @@ In Claude Code (terminal, IDE, or the desktop app's Code tab), ask the user to:
 2. Paste the key from https://serpapi.com/dashboard into the masked field.
 3. Run `/reload-plugins`.
 
-In claude.ai or Cowork, ask the user to:
+In claude.ai, the Claude desktop app, or Cowork, ask the user to:
 
 1. Open **Customize > Plugins**, select SerpApi, and open its **Connectors** tab.
 2. Select **Connect** next to `serpapi` and choose **No sign-in**.
