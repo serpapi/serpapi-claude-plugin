@@ -1,0 +1,25 @@
+name: Validate Plugin
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install pinned Claude Code
+        run: npm install --global @anthropic-ai/claude-code@2.1.283
+      # "." checks only marketplace.json; plugin.json also checks .mcp.json and skills.
+      - name: Validate marketplace and plugin
+        run: |
+          claude plugin validate --strict .
+          claude plugin validate --strict .claude-plugin/plugin.json

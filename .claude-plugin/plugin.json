@@ -1,11 +1,36 @@
 {
   "name": "serpapi",
-  "description": "Search Google, Amazon, Walmart, YouTube, and 100+ engines via SerpApi",
-  "version": "1.0.0",
+  "displayName": "SerpApi",
+  "description": "Search Google, Amazon, Walmart, YouTube, and 100+ engines through SerpApi's MCP server",
+  "version": "2.0.0",
   "author": {
-    "name": "SerpApi"
+    "name": "SerpApi",
+    "email": "support@serpapi.com",
+    "url": "https://serpapi.com"
   },
   "homepage": "https://serpapi.com",
   "repository": "https://github.com/serpapi/serpapi-claude-plugin",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "search",
+    "web-search",
+    "google",
+    "serp",
+    "mcp",
+    "serpapi"
+  ],
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://github.com/serpapi/serpapi-claude-plugin#readme",
+  "supportUrl": "https://serpapi.com/#contact",
+  "privacyPolicyUrl": "https://serpapi.com/legal#privacy-policy",
+  "termsOfServiceUrl": "https://serpapi.com/legal#terms-of-service",
+  "userConfig": {
+    "api_key": {
+      "type": "string",
+      "title": "SerpApi API key",
+      "description": "Copy it from https://serpapi.com/dashboard. Claude Code keeps it in your system's credential store.",
+      "sensitive": true,
+      "required": true
+    }
+  }
 }

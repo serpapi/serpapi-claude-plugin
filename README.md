@@ -1,119 +1,104 @@
-# <img src="https://user-images.githubusercontent.com/307597/154772945-1b7dba5f-21cf-41d0-bb2e-65b6eff4aaaf.png" width="30" height="30"/> SerpApi Plugin for Claude Code
+![SerpApi logo](https://raw.githubusercontent.com/serpapi/serpapi-claude-plugin/main/assets/logo.png)
 
-A [Claude Code plugin](https://docs.anthropic.com/en/docs/claude-code/plugins) that gives Claude the ability to search Google, Amazon, Walmart, YouTube, Google Maps, Google Scholar, and [100+ other engines](https://serpapi.com/search-engine-apis) via the [SerpApi](https://serpapi.com) REST API.
+# SerpApi for Claude
 
-[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Engines](https://img.shields.io/badge/engines-107-blue.svg)](engines/)
-[![CI](https://github.com/serpapi/serpapi-claude-plugin/actions/workflows/update-engines.yml/badge.svg)](https://github.com/serpapi/serpapi-claude-plugin/actions/workflows/update-engines.yml)
+Ask Claude to search Google, Google Maps, Amazon, YouTube, and 100+ other search engines
+through [SerpApi](https://serpapi.com). Claude picks the engine that fits your question, such as Google Maps for a local
+business or Google Flights for fares, and answers with links to its sources.
 
-## Quick Start
+The plugin works in Claude Code and in claude.ai.
 
-### 1. Get an API key
+## Before you start
 
-Sign up at [serpapi.com](https://serpapi.com/users/sign_up?plan=free) and set the key:
+You need a SerpApi API key. SerpApi's free plan includes 250 searches a
+month. [Sign up](https://serpapi.com/users/sign_up), then copy your key from
+the [dashboard](https://serpapi.com/dashboard).
 
-> **Free tier** - 250 searches/month, no credit card required.
+## Set up in Claude Code
 
-```bash
-export SERPAPI_API_KEY="your_key_here"
-```
+In [Claude Code](https://code.claude.com/docs/en/overview), run these two commands one at a time:
 
-### 2. Install the plugin
-
-**From the marketplace** (two steps - register the catalog, then install):
-
-```bash
+```text
 /plugin marketplace add serpapi/serpapi-claude-plugin
 /plugin install serpapi@serpapi-plugins
 ```
 
-**From source:**
+Claude Code asks for your API key during the install and stores it securely in your system's credential store.
 
-```bash
-claude --plugin-dir /path/to/serpapi-claude-plugin
-```
+To add or change the key later, run `/plugin configure serpapi@serpapi-plugins` and then `/reload-plugins`. You need
+this if you installed with `claude plugin install` from a terminal, because that command doesn't ask for the key.
 
-### 3. Use it
+## Set up in claude.ai
 
-Claude will automatically use SerpApi when you ask it to search for something. Just ask in natural language:
+1. Open **Customize > Plugins**, select **Add > Add marketplace**, enter `serpapi/serpapi-claude-plugin`, and add the
+   SerpApi plugin.
+2. Open the plugin's **Connectors** tab and select **Connect** next to `serpapi`.
+3. Under **Authentication**, choose **No sign-in**.
+4. Under **Request headers**, enter `Bearer YOUR_API_KEY` as the value of the `authorization` header, with your key in
+   place of `YOUR_API_KEY`. Then add the connector.
 
-> *Search Google for the best Python web frameworks*
->
-> *Compare prices for AirPods Pro on Amazon, Walmart, and eBay*
->
-> *Find academic papers about transformer architectures published after 2020*
+claude.ai stores the header value securely and doesn't show it again. A plugin you add in claude.ai also appears in
+Claude Code, which keeps its own copy of the key, so set the key there too as described above.
 
-Or invoke the skill explicitly:
+## Search
 
-```
+In Claude Code, use the `/serpapi:search` command:
+
+```text
 /serpapi:search coffee shops near Times Square
 ```
 
-## Features
+In claude.ai, type `/` and choose `serpapi:search` from the menu. In either app you can also ask in your own words, such
+as "Use SerpApi to find this week's news about solar energy." Some other requests to try:
 
-- **Single skill, all engines** - `/serpapi:search` covers all 100+ SerpApi engines. Claude picks the right one based on your intent.
-- **Always up to date** - Engine parameter schemas are auto-generated and kept fresh by weekly CI.
-- **Auto-invocation** - Claude detects search-related requests and loads the skill automatically. No need to remember slash commands.
-- **Cost-aware** - Defaults to `google_light` (faster, cheaper) for simple web searches. Confirms before making API calls.
-- **Schema-driven** - The plugin ships a complete engine selection table and JSON schemas for every engine's parameters, so Claude can construct the right API call without guessing.
+- "Compare Sony WH-1000XM5 prices on Amazon, Walmart, and Google Shopping."
+- "Show the newest reviews for The French Laundry in Yountville."
+- "List research papers on transformer architectures published since 2023."
+- "Find nonstop flights from New York to London next month." Claude asks for exact dates if you leave them out.
 
-## Supported Engines
+Claude answers in prose unless you ask for a table or for the raw results. Raw results come as JSON, with every field
+SerpApi returns, or as Markdown, which is easier to read and shorter. A full Google results page in Markdown is about a
+third the size of the JSON. Ask for Markdown when you want the results without the extra detail.
 
-| Category | Engines |
-|----------|---------|
-| Web Search | Google, Google Light, Bing, DuckDuckGo, Yahoo, Yandex, Baidu, Naver |
-| AI Search | Google AI Mode, Google AI Overview, Bing Copilot, Brave AI Mode |
-| Shopping | Amazon, Walmart, eBay, Google Shopping, Home Depot |
-| Local / Maps | Google Maps, Google Local, Yelp, TripAdvisor, OpenTable |
-| Research | Google Scholar, Google Patents, Google Trends |
-| News | Google News, Bing News, DuckDuckGo News, Baidu News |
-| Media | Google Images, Google Videos, YouTube, Google Lens |
-| Travel | Google Flights, Google Hotels, Google Travel Explore |
-| Jobs | Google Jobs |
-| Finance | Google Finance |
-| Apps | Google Play, Apple App Store |
+## Questions
 
-See the full list in [`engines/`](engines/).
+### How many searches does a request use?
 
-## Troubleshooting
+Usually one. A request that compares several stores, or reads more than one page of results, uses one search per store
+or page. SerpApi counts only successful searches. Repeating an identical search within an hour is free, because SerpApi
+returns the cached result. Your [dashboard](https://serpapi.com/dashboard) shows how many searches you have left, and
+the [pricing page](https://serpapi.com/pricing) lists the plans.
 
-- **"Invalid API key"**: Verify at [serpapi.com/manage-api-key](https://serpapi.com/manage-api-key)
-- **Skill not loading**: Run `/reload-plugins` inside Claude Code
-- **Rate limit exceeded**: Wait or [upgrade your plan](https://serpapi.com/pricing)
+### What does the plugin send to SerpApi?
 
-## Development
+When Claude searches, your query and any details it needs, such as a location or travel dates, go to SerpApi's MCP
+server at `mcp.serpapi.com`. Your API key goes with each request in an authorization header. Claude Code sends it from
+your computer, and claude.ai sends it from the connector you set up. SerpApi runs the search and returns the results to
+Claude.
 
-Engine schemas are auto-generated by `build-engines.py` and updated weekly via [GitHub Actions](.github/workflows/update-engines.yml).
+Claude may also open SerpApi's public documentation to check an engine's options, or open a result's web page to confirm
+an answer. Your key isn't sent to those pages.
 
-To regenerate manually:
+The plugin contains only the server address and instructions for Claude, so nothing from it runs on your computer. It
+collects no analytics, and it searches only when a request needs it. Read
+SerpApi's [privacy policy](https://serpapi.com/legal#privacy-policy)
+and [terms of service](https://serpapi.com/legal#terms-of-service) for how SerpApi handles your searches.
 
-```bash
-pip install -r requirements.txt
-python build-engines.py
-```
+### A search failed. What now?
 
-To validate the plugin structure:
+Claude shows you SerpApi's error message. The common ones:
 
-```bash
-bash test.sh
-```
+| Error                                       | What to do                                                                                                                                                                                                                  |
+|---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Missing API key, or Invalid SerpApi API key | In Claude Code, run `/plugin configure serpapi@serpapi-plugins`, enter your key, then run `/reload-plugins`. In claude.ai, disconnect `serpapi` on the plugin's **Connectors** tab and connect it again with the right key. |
+| Rate limit exceeded                         | You've used this month's searches or your plan's hourly limit. Check the [dashboard](https://serpapi.com/dashboard).                                                                                                        |
+| Claude has no SerpApi tools                 | In Claude Code, run `/mcp` and check that the SerpApi server is connected. In claude.ai, check that the plugin's **Connectors** tab shows `serpapi` as connected.                                                           |
 
-## Contributing
+## Help
 
-1. Fork the repository
-2. Create your feature branch: `git checkout -b feature/amazing-feature`
-3. Make your changes
-4. Run validation: `bash test.sh`
-5. Commit changes: `git commit -m 'Add amazing feature'`
-6. Push to branch: `git push origin feature/amazing-feature`
-7. Open a Pull Request
+For questions about your SerpApi account or the search API, contact [SerpApi support](https://serpapi.com/#contact) or
+email [support@serpapi.com](mailto:support@serpapi.com). Report plugin bugs
+as [GitHub issues](https://github.com/serpapi/serpapi-claude-plugin/issues). Include the error message, but remove
+private details and never paste your API key.
 
-## Related
-
-- [SerpApi MCP Server](https://github.com/serpapi/serpapi-mcp) - MCP server integration for Claude Desktop, VS Code, and Cursor
-- [SerpApi Docs](https://serpapi.com/search-api) - Full API reference
-- [SerpApi Playground](https://serpapi.com/playground) - Interactive API explorer
-
-## License
-
-MIT License - see [LICENSE](LICENSE) file for details.
+The plugin is released under the [MIT license](https://github.com/serpapi/serpapi-claude-plugin/blob/main/LICENSE).
