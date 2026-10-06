@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/serpapi/serpapi-claude-plugin/main/assets/logo.png" width="30" height="30"/> SerpApi for Claude
+# SerpApi for Claude
 
 Ask Claude to search Google, Google Maps, Amazon, YouTube, and 100+ other search engines
 through [SerpApi](https://serpapi.com). Claude picks the engine that fits your question, such as Google Maps for a local
